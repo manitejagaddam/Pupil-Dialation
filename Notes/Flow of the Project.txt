@@ -1,0 +1,24 @@
+1. Detecting the eyes using mediapie and cv2 cropping feature
+2. Extract the features of eye like pupils using feature extraction methods
+3. Calculate the diaeter of the pupils dialation
+4. Connect any BPM caluclation machine to create your own data set of bpm and pupils diameter for training of the model
+5. Make step 2, 3 as the the preprocessing file for the futher usage
+6. Create a LSTM ( use LSTM ratehr than CNN because of the sequence of the values should be needed for exact prediction ).
+                                                OR
+6. Create a LSTM included with CNN for better Calculation rather htan preprocssing and caluclating the diameter of the pupils
+7. Train the Model by the generated data.
+8. Extract the Model as .h5( python files ) / .tfilite ( javascript users )
+9. Using the CV2 / Cam recorder use the preprocessing file and the model predict the heart rate
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                       MODEL PIPELINE
++-------------------------------------------------------------------------------------------------------------------------------+
+|         Vedio Input --> Feature Extraction --> Diameter Caluclation (preprocessing) --> Model Prediction --> Output           |
++-------------------------------------------------------------------------------------------------------------------------------+
+
++--------------------+      +----------------------+      +-------------------------+      +---------------------+      +----------------+
+|   Webcam / Video   | -->  |   Eye Landmark Track | -->  |   Diameter Calculation  | -->  |  LSTM Model Predict  | -->  | BPM Estimation |
++--------------------+      +----------------------+      +-------------------------+      +---------------------+      +----------------+
+
+        [ MediaPipe ]              [ Eye Landmarks ]            [ Feature Extraction ]         [ Time Series ]         [ Heart Rate Output ]
