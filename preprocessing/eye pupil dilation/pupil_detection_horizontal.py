@@ -86,6 +86,10 @@ class PupilDiameterDetector:
             "right_eye_closed": right_eye_closed,
             "feedback": feedback
         }
+    def get_both_eyes_diameter(self):
+        res = self.process_frame(frame)
+        return {res["left_pupil_diameter_px"], res["right_pupil_diameter_px"]}
+        
 
 # Usage example
 if __name__ == "__main__":
