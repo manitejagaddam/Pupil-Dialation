@@ -4,3 +4,5 @@ tensorflow-io==0.23.1
 numpy
 pandas
 matplotlib
+asyncio
+bleak

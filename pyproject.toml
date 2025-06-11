@@ -5,6 +5,8 @@ description = "Detecting Your Heart Rate Using the Pupil Dialation"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "asyncio>=3.4.3",
+    "bleak>=0.22.3",
     "matplotlib>=3.10.3",
     "mediapipe>=0.10.21",
     "numpy>=1.26.4",
