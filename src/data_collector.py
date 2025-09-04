@@ -64,6 +64,7 @@ while True:
             "pupil_radius": round(radius, 2),
             "heart_rate": round(heartbeat, 2)
         })
+        print(pupil_log[-1])
 
         # Draw for preview (optional)
         cv2.circle(frame, tuple(center.astype(int)), int(radius), (0, 255, 0), 2)

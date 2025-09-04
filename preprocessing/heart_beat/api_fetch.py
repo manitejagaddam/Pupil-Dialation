@@ -1,10 +1,13 @@
 import asyncio
+from dotenv import load_dotenv
 from bleak import BleakClient, BleakScanner
+import os
 
 class HeartRateMonitor:
-    HR_CHAR_UUID = "00002a37-0000-1000-8000-00805f9b34fb"
+    HR_CHAR_UUID = "00000af7-0000-1000-8000-00805f9b34fb"
 
     def __init__(self, mac_address):
+        
         self.mac_address = mac_address
         self.bpm = None
         self.client = BleakClient(mac_address)
@@ -44,7 +47,9 @@ class HeartRateMonitor:
 
 # ✅ Example Usage
 if __name__ == "__main__":
-    WATCH_MAC = "XX:XX:XX:XX:XX:XX"  # Replace with your watch MAC address
+    load_dotenv()
+    WATCH_MAC = "01:E7:65:08:51:E7"  # Replace with your watch MAC address
+    # WATCH_MAC = os.getenv("MAC_ADD")  # Replace with your watch MAC address
     monitor = HeartRateMonitor(WATCH_MAC)
     bpm = monitor.read_heart_rate()
     print(f"❤️ Heart Rate: {bpm} BPM")

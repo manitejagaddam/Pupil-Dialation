@@ -17,7 +17,7 @@ async def run():
     for d in devices:
         print(d)  # Find your watch's MAC here
 
-    address = "XX:XX:XX:XX:XX:XX"  # Replace with your watch's MAC
+    address = "01:E7:65:08:51:E7"  # Replace with your watch's MAC
     async with BleakClient(address) as client:
         print("Connected")
 
